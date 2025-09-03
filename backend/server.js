@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello world");
 });
 
 app.get("/counter", (req, res) => {
