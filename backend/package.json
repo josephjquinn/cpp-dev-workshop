@@ -1,22 +1,14 @@
 {
-  "name": "simple-backend",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Extremely simple Node.js backend for React tutorial",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5"
-  },
-  "keywords": [
-    "nodejs",
-    "express",
-    "tutorial",
-    "beginner"
-  ],
-  "author": "Tutorial",
-  "license": "MIT"
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
 }

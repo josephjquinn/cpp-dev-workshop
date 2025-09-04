@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -10,11 +10,11 @@ app.use(express.json());
 let counter = 0;
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Counter API! Try /counter to get started.");
+  res.send("Welcome to the Change Plus Plus!");
 });
 
-app.get("/hello", (req, res) => {
-  res.send("Hello world");
+app.get("/msg", (req, res) => {
+  res.send("Test Message Successful");
 });
 
 app.get("/counter", (req, res) => {

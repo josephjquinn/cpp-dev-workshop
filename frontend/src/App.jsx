@@ -2,22 +2,22 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [counter, setCounter] = useState(0);
-  const [helloMessage, setHelloMessage] = useState("");
+  const [serverMsg, setServerMsg] = useState("");
 
   const getCounter = async () => {
-    const response = await fetch("http://localhost:5000/counter");
+    const response = await fetch("http://localhost:3000/counter");
     const data = await response.json();
     setCounter(data.counter);
   };
 
-  const getHelloMessage = async () => {
-    const response = await fetch("http://localhost:5000/hello");
+  const getServerMsg = async () => {
+    const response = await fetch("http://localhost:3000/msg");
     const message = await response.text();
-    setHelloMessage(message);
+    setServerMsg(message);
   };
 
   const addOne = async () => {
-    const response = await fetch("http://localhost:5000/counter/increment", {
+    const response = await fetch("http://localhost:3000/counter/increment", {
       method: "POST",
     });
     const data = await response.json();
@@ -25,7 +25,7 @@ function App() {
   };
 
   const minusOne = async () => {
-    const response = await fetch("http://localhost:5000/counter/decrement", {
+    const response = await fetch("http://localhost:3000/counter/decrement", {
       method: "POST",
     });
     const data = await response.json();
@@ -33,7 +33,7 @@ function App() {
   };
 
   const resetToZero = async () => {
-    const response = await fetch("http://localhost:5000/counter/reset", {
+    const response = await fetch("http://localhost:3000/counter/reset", {
       method: "POST",
     });
     const data = await response.json();
@@ -42,17 +42,17 @@ function App() {
 
   useEffect(() => {
     getCounter();
-    getHelloMessage();
+    getServerMsg;
   }, []);
 
   return (
     <div>
-      <h1>Simple Counter</h1>
+      <h1>Change Plus Plus Workshop Counter</h1>
 
       <div>
-        <h2>Hello Message</h2>
-        <p>{helloMessage}</p>
-        <button onClick={getHelloMessage}>Get Text</button>
+        <h2>Server Message</h2>
+        <p>{serverMsg}</p>
+        <button onClick={getServerMsg}>Get Text</button>
       </div>
 
       <h2>Counter: {counter}</h2>
@@ -61,8 +61,6 @@ function App() {
       <button onClick={minusOne}>Minus 1</button>
       <button onClick={resetToZero}>Reset</button>
       <button onClick={getCounter}>Refresh</button>
-
-      <p>This counter is stored in server memory!</p>
     </div>
   );
 }
