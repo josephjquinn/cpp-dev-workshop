@@ -10,7 +10,7 @@ app.use(express.json());
 let counter = 0;
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Change Plus Plus!");
+  res.send("Welcome to the Change Plus Plus Workshop!");
 });
 
 app.get("/msg", (req, res) => {
